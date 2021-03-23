@@ -1,0 +1,99 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/shacheng/Projects/weekday_work/Bookmark-Manager/spec/features/add_bookmark_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/shacheng/Projects/weekday_work/Bookmark-Manager/spec/features/visit_bookmarks_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/shacheng/Projects/weekday_work/Bookmark-Manager/spec/setup_test_db.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          2,
+          2,
+          2,
+          2,
+          null
+        ]
+      },
+      "/Users/shacheng/Projects/weekday_work/Bookmark-Manager/spec/unit/bookmark_spec.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/shacheng/Projects/weekday_work/Bookmark-Manager/spec/unit/db_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "timestamp": 1616536935
+  }
+}
