@@ -7,17 +7,27 @@ describe Bookmark do
   describe '#add' do
     it 'adds url to database' do
       url = "test"
-      sql = "INSERT INTO bookmarks (url) VALUES ('test');"
-      expect(DB).to receive(:query).with(sql)
-      Bookmark.add(url)
+      title = "test"
+      sql = "INSERT INTO bookmarks (url, title) VALUES ('#{url}', '#{title}') RETURNING id, url, title;"
+      expect(DB).to receive(:query).with(sql).and_return([{"id" => "3", "url" => "test", "title" => "test"}])
+      Bookmark.add(url, title)
     end
   end
 
   describe '#items' do
     it 'shows all bookmarks' do
       bookmarks = Bookmark.items
-      expect(bookmarks).to include("https://google.com")
-      expect(bookmarks).to include("https://youtube.com")
+      expect(bookmarks.length).to eq 3
+      expect(bookmarks.first).to be_a Bookmark
+      expect(bookmarks.first.title).to eq "Google"
     end
   end
+
+  describe '#delete' do 
+    it 'deletes a bookmark' do
+      sql = "DELETE FROM bookmarks WHERE id = '1';"
+      expect(DB).to receive(:query).with(sql)
+      Bookmark.delete('1')
+    end
+  end 
 end
