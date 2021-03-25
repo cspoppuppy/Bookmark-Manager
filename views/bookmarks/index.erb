@@ -1,6 +1,7 @@
 
 <a href="/bookmarks/new">Add Bookmark</a>
 <br/>
+<%= flash[:error] %>
 <ul>
   <% @bookmarks.each do |bookmark| %>
     <li class="bookmark" id="bookmark-<%= bookmark.id %>">

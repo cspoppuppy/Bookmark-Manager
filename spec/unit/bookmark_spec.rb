@@ -6,10 +6,10 @@ describe Bookmark do
 
   describe '.add' do
     it 'adds url to database' do
-      url = "test"
+      url = "https://test.com"
       title = "test"
       sql = "INSERT INTO bookmarks (url, title) VALUES ('#{url}', '#{title}') RETURNING id, url, title;"
-      expect(DB).to receive(:query).with(sql).and_return([{"id" => "3", "url" => "test", "title" => "test"}])
+      expect(DB).to receive(:query).with(sql).and_return([{ "id" => "3", "url" => url, "title" => title }])
       Bookmark.add(url, title)
     end
   end
