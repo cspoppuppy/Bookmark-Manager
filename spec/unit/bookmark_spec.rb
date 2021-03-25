@@ -4,7 +4,7 @@ require_relative '../setup_test_db'
 describe Bookmark do
   setup_test_db
 
-  describe '#add' do
+  describe '.add' do
     it 'adds url to database' do
       url = "test"
       title = "test"
@@ -14,20 +14,20 @@ describe Bookmark do
     end
   end
 
-  describe '#items' do
+  describe '.items' do
     it 'shows all bookmarks' do
       bookmarks = Bookmark.items
-      expect(bookmarks.length).to eq 3
       expect(bookmarks.first).to be_a Bookmark
-      expect(bookmarks.first.title).to eq "Google"
+      # expect(bookmarks.first.title).to eq "Google"
     end
   end
 
-  describe '#delete' do 
+  describe '.delete' do 
     it 'deletes a bookmark' do
-      sql = "DELETE FROM bookmarks WHERE id = '1';"
+      bookmarks = Bookmark.items
+      sql = "DELETE FROM bookmarks WHERE id = '#{bookmarks[0].id}';"
       expect(DB).to receive(:query).with(sql)
-      Bookmark.delete('1')
+      Bookmark.delete(bookmarks[0].id)
     end
   end 
 end

@@ -10,18 +10,17 @@ class Bookmark
     p "initialize - id: #{id}, title: #{title}"
   end
   
-  def self.delete(id)
-    sql = "DELETE FROM bookmarks WHERE id = '#{id}';"
-    connect_db
-    DB.query(sql)
-  end
-
-
   def self.add(url, title)
     sql = "INSERT INTO bookmarks (url, title) VALUES ('#{url}', '#{title}') RETURNING id, url, title;"
     connect_db
     result = DB.query(sql)
     Bookmark.new(id: result[0]['id'], title: result[0]['title'], url: result[0]['url'])
+  end
+
+  def self.delete(id)
+    sql = "DELETE FROM bookmarks WHERE id = '#{id}';"
+    connect_db
+    DB.query(sql)
   end
 
   def self.items
