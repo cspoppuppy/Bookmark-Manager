@@ -22,6 +22,19 @@
           null
         ]
       },
+      "/Users/shacheng/Projects/weekday_work/Bookmark-Manager/spec/features/add_comments_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/shacheng/Projects/weekday_work/Bookmark-Manager/spec/features/delete_bookmark_spec.rb": {
         "lines": [
           1,
@@ -114,6 +127,23 @@
           1,
           null,
           null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          2,
+          null,
+          null,
           null
         ]
       },
@@ -121,6 +151,7 @@
         "lines": [
           1,
           null,
+          1,
           1,
           1,
           1,
@@ -157,6 +188,6 @@
         ]
       }
     },
-    "timestamp": 1616710282
+    "timestamp": 1616715389
   }
 }

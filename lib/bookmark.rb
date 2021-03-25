@@ -19,16 +19,16 @@ class Bookmark
 
   def self.delete(id)
     sql = "DELETE FROM bookmarks WHERE id = '#{id}';"
-    db_query(sql)
+    DB.query(sql)
   end
 
   def self.update(id, title, url)
-    sql = "UPDATE bookmarks SET title='#{title}', url='#{url}' WHERE id='#{id}'"
-    db_query(sql)
+    sql = "UPDATE bookmarks SET title='#{title}', url='#{url}' WHERE id='#{id}';"
+    DB.query(sql)
   end
 
   def self.items
-    result = db_query("SELECT * FROM bookmarks;")
+    result = DB.query("SELECT * FROM bookmarks;")
     result.map do |bookmark|
       Bookmark.new(id: bookmark['id'], title: bookmark['title'], url: bookmark['url'])
     end
@@ -36,7 +36,7 @@ class Bookmark
 
   def self.find(id)
     sql = "SELECT * FROM bookmarks WHERE id='#{id}';"
-    result = db_query(sql)
+    result = DB.query(sql)
     Bookmark.new(id: result[0]['id'], title: result[0]['title'], url: result[0]['url'])
   end
 
@@ -44,12 +44,13 @@ class Bookmark
     url =~ /\A#{URI::regexp(['http', 'https'])}\z/
   end
 
-  def self.connect_db
-    db_name = ENV['DB_ENV'] == 'test' ? 'bookmark_manager_test' : 'bookmark_manager'
-    DB.setup(db_name)
+  def add_comment(text)
+    sql = "INSERT INTO comments (text, bookmark_id) VALUES('#{text}', '#{@id}');"
+    DB.query(sql)
   end
 
-  def self.db_query(sql)
-    DB.query(sql)
+  def comments
+    sql = "SELECT * FROM comments WHERE bookmark_id='#{@id}'"
+    result = DB.query(sql)
   end
 end

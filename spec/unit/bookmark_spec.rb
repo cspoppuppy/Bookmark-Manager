@@ -35,7 +35,7 @@ describe Bookmark do
     it 'update a bookmark' do
       bookmarks = Bookmark.items
       id = bookmarks[0].id
-      sql = "UPDATE bookmarks SET title='test', url='test' WHERE id='#{id}'"
+      sql = "UPDATE bookmarks SET title='test', url='test' WHERE id='#{id}';"
       expect(DB).to receive(:query).with(sql)
       Bookmark.update(id, 'test', 'test')
     end
@@ -45,6 +45,23 @@ describe Bookmark do
     it 'find item from database' do
       bookmarks = Bookmark.items
       expect(Bookmark.find(bookmarks[0].id).title).to eq bookmarks[0].title
+    end
+  end
+
+  describe '#add_comment' do
+    it 'adds comments for bookmark' do
+      bookmark = Bookmark.items[0]
+      sql = "INSERT INTO comments (text, bookmark_id) VALUES('test comments', '#{bookmark.id}');"
+      expect(DB).to receive(:query).with(sql)
+      bookmark.add_comment('test comments')
+    end
+  end
+
+  describe '#comments' do
+    it 'gets comments for bookmark' do
+      bookmark = Bookmark.items[0]
+      bookmark.add_comment('test comments 2')
+      expect(bookmark.comments.select { |comment| comment['text'] == 'test comments 2' }).to_not be_empty
     end
   end
 end
