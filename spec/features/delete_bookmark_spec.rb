@@ -3,7 +3,7 @@ feature 'delete bookmark' do
     visit('/bookmarks')
     expect(page).to have_link('Google', href: 'https://google.com')
 
-    first('.bookmark').click_button 'delete'
+    first('.bookmark').click_button 'Delete'
     expect(current_path).to eq '/bookmarks'
     expect(page).not_to have_link('Google', href: 'https://google.com')
   end

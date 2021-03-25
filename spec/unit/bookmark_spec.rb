@@ -30,4 +30,21 @@ describe Bookmark do
       Bookmark.delete(bookmarks[0].id)
     end
   end 
+
+  describe '.update' do
+    it 'update a bookmark' do
+      bookmarks = Bookmark.items
+      id = bookmarks[0].id
+      sql = "UPDATE bookmarks SET title='test', url='test' WHERE id='#{id}'"
+      expect(DB).to receive(:query).with(sql)
+      Bookmark.update(id, 'test', 'test')
+    end
+  end
+
+  describe '.find' do
+    it 'find item from database' do
+      bookmarks = Bookmark.items
+      expect(Bookmark.find(bookmarks[0].id).title).to eq bookmarks[0].title
+    end
+  end
 end

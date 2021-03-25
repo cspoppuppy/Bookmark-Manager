@@ -28,10 +28,11 @@
           null
         ]
       },
-      "/Users/shacheng/Projects/weekday_work/Bookmark-Manager/spec/features/visit_bookmarks_spec.rb": {
+      "/Users/shacheng/Projects/weekday_work/Bookmark-Manager/spec/features/update_bookmark_spec.rb": {
         "lines": [
           1,
-          null,
+          1,
+          1,
           1,
           1,
           1,
@@ -41,15 +42,16 @@
           null
         ]
       },
-      "/Users/shacheng/Projects/weekday_work/Bookmark-Manager/spec/setup_test_db.rb": {
+      "/Users/shacheng/Projects/weekday_work/Bookmark-Manager/spec/features/visit_bookmarks_spec.rb": {
         "lines": [
-          1,
           null,
-          1,
-          2,
-          2,
-          2,
-          2,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -87,6 +89,35 @@
           1,
           null,
           null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/shacheng/Projects/weekday_work/Bookmark-Manager/spec/setup_test_db.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
           null
         ]
       },
@@ -118,6 +149,6 @@
         ]
       }
     },
-    "timestamp": 1616607261
+    "timestamp": 1616708312
   }
 }
