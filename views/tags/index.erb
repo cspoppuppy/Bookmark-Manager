@@ -4,9 +4,10 @@
   <title>Bookmark Manager</title>
 </head>
 <body>
-  <form action="/bookmarks/<%= @id %>/comments" method="post">
-    <input type="text" name="comment">
+  <form action="/tags" method="post">
+    <label for="content">Tag:</label>
+    <input type="text" name="content">  
     <input type="submit" value="Submit">
-  <form>
+  </form>
 </body>
 </html>

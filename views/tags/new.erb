@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Bookmark Manager</title>
+</head>
+<body>
+  <form action="/bookmarks/<%=@id%>/tags" method="post">
+    <label for="tag">Tag:</label>
+    <select name="tag">
+    <% @tags.each do |tag| %>
+      <option value=<%= tag.id %>><%= tag.content %></option>
+    <% end %>
+    </select>
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>

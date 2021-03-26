@@ -1,0 +1,19 @@
+body {
+  background-color: #e4d1d1;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 80% 20%;
+  grid-column-gap: 2em;
+  padding: 5%;
+}
+
+.bookmark {
+  border-style: solid;
+  border-width: thin;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-row-gap: 2em;
+  padding: 1%;
+}

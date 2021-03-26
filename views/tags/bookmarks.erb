@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Bookmark Manager</title>
+</head>
+<body>
+  <ul>
+  <% @bookmarks.each do |bookmark| %>
+    <li>
+    <a href=<%= bookmark.url %> target="blank">
+      <%= bookmark.title %>
+    </a>
+    </li>
+  <% end %>
+  </ul>
+</body>
+</html>
